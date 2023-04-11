@@ -5,7 +5,7 @@ import SideContent from "../SideContent";
 export default function HomePage() {
   return (
     <div className="HomePage">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <MainContent />
         <SideContent />
