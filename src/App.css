@@ -197,7 +197,7 @@
   padding: 0 10%;
   background-color: #2f81f7;
   letter-spacing: 2px;
-  display: none;
+  /* display: none; */
 }
 /* .nav-links li {
   list-style: none;

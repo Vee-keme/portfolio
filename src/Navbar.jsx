@@ -3,11 +3,14 @@ import { Route, Routes, Link } from "react-router-dom";
 import { navLinks } from "./nav-links";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  // const navId = document.getElementById("NavItems");
+  const navId = document.getElementsByClassName("nav-links");
 
   // const navLinks1 = navLinks;
   //set navbar button to toggle
   const toggle = () => {
     setIsOpen(!isOpen);
+
     console.log(isOpen);
   };
 
@@ -18,15 +21,22 @@ export default function Navbar() {
           <h1>!velia</h1>
         </div>
 
-        <div className="Navbar-menu" onClick={toggle}>
+        <nav className="Navbar-menu" onClick={toggle}>
           {isOpen ? (
             <i className="fa-solid fa-xmark"></i>
           ) : (
             <i className="fa-solid fa-bars"></i>
           )}
-        </div>
+        </nav>
       </div>
-      <div className="nav-links">
+
+      <div
+        className="nav-links"
+        style={{
+          display: isOpen ? "block" : "none",
+        }}
+        onClick={toggle}
+      >
         <ul>
           <li data-text="home">
             <Link to="/">Home</Link>
