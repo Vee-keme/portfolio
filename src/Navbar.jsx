@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { navLinks } from "./nav-links";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   // const navId = document.getElementById("NavItems");

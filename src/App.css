@@ -54,6 +54,7 @@
   position: absolute;
   bottom: 0;
   padding: 2rem;
+  /* z-index: 12; */
 }
 
 .SideContent .links {
@@ -223,7 +224,7 @@
 
 .cursor {
   position: fixed;
-  /* left: 10px; */
+  left: 10px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -241,7 +242,7 @@
 }
 .outerCursor {
   position: fixed;
-  /* left: 10px; */
+  left: 10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -249,6 +250,6 @@
   border: 1px solid #fff;
   mix-blend-mode: difference;
   pointer-events: none;
-  transition: 0.1s;
+  transition: 0.05s;
   z-index: 1500;
 }
