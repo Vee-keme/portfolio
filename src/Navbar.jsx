@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { navLinks } from "./nav-links";
+import { words } from "./utils/words";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [word, setWord] = useState("");
   // const navId = document.getElementById("NavItems");
   const navId = document.getElementsByClassName("nav-links");
 
@@ -15,11 +16,29 @@ export default function Navbar() {
     console.log(isOpen);
   };
 
+  //display random words starting with V at the logo
+  function displayRandomWord(wordArray) {
+    let randomIndex;
+    setTimeout(function () {
+      randomIndex = Math.floor(Math.random() * wordArray.length);
+      const vWord = wordArray[randomIndex];
+      setWord(vWord);
+    }, 5000);
+  }
+
+  useEffect(() => {
+    displayRandomWord(words);
+  }, []);
+
+  displayRandomWord(words);
+
   return (
     <>
       <div className="Navbar">
         <div className="Navbar-title">
-          <h1>!velia</h1>
+          <h1>
+            V <span>{word ? `${word}` : "null"}</span>
+          </h1>
         </div>
 
         <nav className="Navbar-menu" onClick={toggle}>
