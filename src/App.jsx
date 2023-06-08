@@ -9,10 +9,10 @@ import Navbar from "./Navbar";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 
 function App() {
-  const [cursorX, setCursorX] = useState();
-  const [cursorY, setCursorY] = useState();
-  const [outerCursorX, setOuterCursorX] = useState();
-  const [outerCursorY, setOuterCursorY] = useState();
+  const [cursorX, setCursorX] = useState(null);
+  const [cursorY, setCursorY] = useState(null);
+  const [outerCursorX, setOuterCursorX] = useState(null);
+  const [outerCursorY, setOuterCursorY] = useState(null);
   // const [] = useState()
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
@@ -21,7 +21,7 @@ function App() {
       setOuterCursorX(e.clientX);
       setOuterCursorY(e.clientY);
     });
-  }, []);
+  });
 
   let cursor = document.querySelector(".cursor");
   let outerCursor = document.querySelector(".outerCursor");
@@ -48,6 +48,7 @@ function App() {
       cursor.classList.remove("grow");
     });
   });
+
   return (
     <div className="App">
       <Navbar />

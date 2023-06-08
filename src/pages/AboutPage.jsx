@@ -10,18 +10,26 @@ export default function AboutPage() {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
-      <h1>About Page</h1>
+      <motion.h1
+        initial={{ x: -1000, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: "0.5", delay: "0.6" }}
+      >
+        Hello, I am <span>Velia Precious</span> a seasoned developer and
+        proficient technical writer.
+      </motion.h1>
       <h4>
-        Hello, my name is Velia Precious and I am a developer and technical
-        writer. With a passion for both coding and writing, I find myself
-        spending 80% of my time coding and the remaining 20% crafting clear and
-        concise technical documentation. As an avid anime fan, I draw
-        inspiration from the creative and imaginative world of anime to fuel my
-        coding and writing endeavors. My goal is to write code that not only
-        functions efficiently, but is also easy to understand and maintain.
-        Whether it's working on a complex algorithm or drafting a user manual, I
-        am dedicated to producing high-quality work that meets the needs of both
-        users and developers.
+        My expertise lies at the intersection of coding and crafting articulate
+        documentation, with a remarkable 80% of my time dedicated to coding,
+        while the remaining 20% is devoted to honing concise and intelligible
+        technical materials. Drawing immense inspiration from the captivating
+        realm of anime, I infuse creativity and imagination into my coding and
+        writing pursuits. My ultimate objective is to engineer code that not
+        only operates with utmost efficiency but is also effortlessly
+        comprehensible and maintainable. Be it tackling intricate algorithms or
+        composing user manuals, I ardently strive to deliver exceptional work of
+        premium quality, meticulously tailored to cater to the diverse
+        requirements of both end-users and fellow developers."
       </h4>
     </motion.div>
   );

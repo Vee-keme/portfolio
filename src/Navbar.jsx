@@ -23,12 +23,12 @@ export default function Navbar() {
       randomIndex = Math.floor(Math.random() * wordArray.length);
       const vWord = wordArray[randomIndex];
       setWord(vWord);
-    }, 5000);
+    }, 10000);
   }
 
-  useEffect(() => {
-    displayRandomWord(words);
-  }, []);
+  // useEffect(() => {
+  //   displayRandomWord(words);
+  // }, [word]);
 
   displayRandomWord(words);
 
