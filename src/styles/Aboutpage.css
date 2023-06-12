@@ -3,6 +3,27 @@
   height: 100vh;
   background-color: #05040b;
   overflow: hidden;
-  display: grid;
-  place-items: center;
+  display: flex;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 1.4rem;
+  overflow-y: scroll;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+main .headerdiv {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .headerdiv h1 {
+  width: 100%;
+  display: block;
 }

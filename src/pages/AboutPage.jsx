@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/Aboutpage.css";
 import { motion } from "framer-motion";
+// import { useScroll, useTransform } from "framer-motion";
 
 export default function AboutPage() {
   return (
@@ -8,29 +9,46 @@ export default function AboutPage() {
       className="Aboutpage"
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.05 } }}
     >
-      <motion.h1
-        initial={{ x: -1000, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: "0.5", delay: "0.6" }}
-      >
-        Hello, I am <span>Velia Precious</span> a seasoned developer and
-        proficient technical writer.
-      </motion.h1>
-      <h4>
-        My expertise lies at the intersection of coding and crafting articulate
-        documentation, with a remarkable 80% of my time dedicated to coding,
-        while the remaining 20% is devoted to honing concise and intelligible
-        technical materials. Drawing immense inspiration from the captivating
-        realm of anime, I infuse creativity and imagination into my coding and
-        writing pursuits. My ultimate objective is to engineer code that not
-        only operates with utmost efficiency but is also effortlessly
-        comprehensible and maintainable. Be it tackling intricate algorithms or
-        composing user manuals, I ardently strive to deliver exceptional work of
-        premium quality, meticulously tailored to cater to the diverse
-        requirements of both end-users and fellow developers."
-      </h4>
+      <motion.main>
+        <motion.div
+          className="headerdiv"
+          variants={{
+            hidden: { opacity: 0, y: 25 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <h1>
+            Hello, I am Velia Precious a seasoned developer and proficient
+            technical writer.
+          </h1>
+        </motion.div>
+
+        {/* JUST USE ONSCROLL ANIMATIONS AND LATER FIX THE H1 INTO AN HORIZONTAL SCROLL POSITION ON SCROLL */}
+        <h4 className="expertise">
+          My expertise lies at the intersection of coding and crafting
+          articulate documentation, with a remarkable 80% of my time dedicated
+          to coding, while the remaining 20% is devoted to honing concise and
+          intelligible technical materials.
+        </h4>
+        <h4 className="drive">
+          Drawing immense inspiration from the captivating realm of anime, I
+          infuse creativity and imagination into my coding and writing pursuits.
+          My ultimate objective is to engineer code that not only operates with
+          utmost efficiency but is also effortlessly comprehensible and
+          maintainable.
+        </h4>
+        <h4>
+          Be it tackling intricate algorithms or composing user manuals, I
+          ardently strive to deliver exceptional work of premium quality,
+          meticulously tailored to cater to the diverse requirements of both
+          end-users and fellow developers.
+        </h4>
+      </motion.main>
     </motion.div>
   );
 }
