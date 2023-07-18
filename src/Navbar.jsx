@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { words } from "./utils/words";
 
@@ -61,7 +61,7 @@ export default function Navbar() {
           <li data-text="home">
             <Link to="/">Home</Link>
           </li>
-          <li data-text="about">
+          {/* <li data-text="about">
             <Link to="/about">About</Link>
           </li>
           <li data-text="work">
@@ -69,7 +69,7 @@ export default function Navbar() {
           </li>
           <li data-text="contact">
             <Link to="/contact">Contact</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>
